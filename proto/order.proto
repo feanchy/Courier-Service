@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package courier;
+
+option go_package = "github.com/feanchy/Courier-Service/gen/order;courier";
+
+service CourierService {
+  rpc AssignCourier(AssignOrderRequest) returns (AssignOrderResponse);
+}
+
+message AssignOrderRequest {
+  int64 order_id = 1;
+}
+
+message AssignOrderResponse {
+  int64 courier_id = 1;
+}
